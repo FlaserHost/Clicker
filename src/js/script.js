@@ -1,8 +1,8 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-    //const userName = prompt('Как Вас зовут?');
-    const userName = 'FlaserHost';
+    const userName = prompt('Как Вас зовут?');
+    //const userName = 'FlaserHost';
 
     const mainContent = document.querySelector('.main-content');
     const userNameItem = mainContent.querySelector('.user-name > span');
