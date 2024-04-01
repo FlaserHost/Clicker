@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return property;
     }
 
-    const userMoneyUPD = () => userMoney.innerText = `${currentUserMoney} ₽`;
+    const userMoneyUPD = () => userMoney.innerText = `${currentUserMoney.toLocaleString()} ₽`;
 
     workBtns.forEach(btn => {
         btn.addEventListener('click', e => {
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const field = params[selector][0];
                     const title = params[selector][1];
                     const autoPrice = jobs[property][field].price;
-                    autoBtn.innerText = `${title} ${autoPrice} ₽`;
+                    autoBtn.innerText = `${title} ${autoPrice.toLocaleString()} ₽`;
                 });
             }
 
@@ -226,15 +226,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const cost = jobs[property].job_current_cost;
             const newJobCost = cost + jobs[property].job_cost;
 
-            jobCost.innerText = `${newJobCost} ₽`;
+            jobCost.innerText = `${newJobCost.toLocaleString()} ₽`;
             jobs[property].job_current_cost = newJobCost;
 
             currentUserMoney -= price;
 
             const newUPDprice = price * 2;
-            e.target.innerText = `Улучшить ${newUPDprice} ₽`;
+            e.target.innerText = `Улучшить ${newUPDprice.toLocaleString()} ₽`;
             jobs[property].job_UPD_price = newUPDprice;
-            e.target.setAttribute('title', `Улучшить ${newUPDprice} ₽`);
+            e.target.setAttribute('title', `Улучшить ${newUPDprice.toLocaleString()} ₽`);
 
             userMoneyUPD();
             jobUpdateAvailable(levelUpBtns, currentUserMoney);
