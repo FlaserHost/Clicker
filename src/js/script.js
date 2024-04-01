@@ -185,8 +185,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     workBtns.forEach(btn => {
         btn.addEventListener('click', e => {
-            const currentJob = e.target.closest('.job__content');
-            work(currentJob, e.target);
+            if (e.isTrusted) {
+                const currentJob = e.target.closest('.job__content');
+                work(currentJob, e.target);
+            }
         });
     });
 
