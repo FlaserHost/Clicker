@@ -1,0 +1,47 @@
+@media screen and (max-width: 1060px) {
+    .jobs-section > .grid {
+        grid: 1fr / 1fr;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .side-menu {
+        width: auto;
+        max-width: initial;
+        height: auto;
+        border-right: none;
+    }
+
+    .jobs-section {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .job__content {
+        flex-direction: column;
+    }
+
+    .jobs-section,
+    .job-info,
+    .job-btns {
+        width: 100%;
+    }
+
+    .job-btns {
+        flex-direction: row;
+    }
+
+    .jobs .job-btn {
+        width: 50%;
+        max-width: initial;
+    }
+
+    .job-btn {
+        width: 169.03px;
+    }
+}
